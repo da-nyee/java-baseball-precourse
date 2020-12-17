@@ -2,8 +2,7 @@ package baseball.type;
 
 public enum StatusType {
     RESTART("1"),
-    FINISH("2"),
-    INITIAL_RESULT("");
+    FINISH("2");
 
     private final String status;
 

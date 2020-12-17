@@ -1,8 +1,7 @@
 package baseball.type;
 
 public enum SizeType {
-    NUMBER_SIZE(3),
-    FLAG_SIZE(10);
+    NUMBER_SIZE(3);
 
     private final int size;
 

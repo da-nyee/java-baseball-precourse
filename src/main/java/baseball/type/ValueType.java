@@ -1,6 +1,8 @@
 package baseball.type;
 
 public enum ValueType {
+    BALL_VALUE(0),
+    STRIKE_VALUE(1),
     INITIAL_VALUE(0),
     ANSWER_VALUE(3),
     FALSE(0),
