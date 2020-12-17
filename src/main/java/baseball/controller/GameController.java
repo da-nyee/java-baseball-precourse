@@ -13,7 +13,7 @@ public class GameController {
     private static String result = new String();
     private static String scannerNumber = new String();
     private static String playerStatus;
-    private static boolean finishStatus = false;
+    private static boolean finishStatus;
 
     /**
      * 게임을 컨트롤하는 함수
@@ -69,8 +69,7 @@ public class GameController {
      * @param playerNumber
      */
     public static void giveHint(ArrayList<Integer> playerNumber) {
-        HintGenerator hintGenerator = new HintGenerator();
-        result = hintGenerator.generateHint(playerNumber);
+        result = HintGenerator.generateHint(playerNumber);
     }
 
     /**
@@ -84,7 +83,7 @@ public class GameController {
 
         for (int i = BoundaryType.MINIMUM_INDEX.getBoundary();
              i <= BoundaryType.MAXIMUM_INDEX.getBoundary(); i++) {
-            String scannerSubNumber = scannerNumber.substring(i, i+1);
+            String scannerSubNumber = scannerNumber.substring(i, i + 1);
             playerNumber.add(Integer.parseInt(scannerSubNumber));
         }
 
@@ -102,7 +101,7 @@ public class GameController {
             System.out.println(ValueType.ANSWER_VALUE.getValue() + TextType.ANSWER.getText());
             System.out.println(TextType.RESTART_OR_FINISH.getText());
             playerStatus = scanner.nextLine();
-            checkStatus(playerStatus);
+            checkFinishStatus(playerStatus);
         }
 
         return finishStatus;
@@ -113,10 +112,9 @@ public class GameController {
      *
      * @param playerStatus
      */
-    public static void checkStatus(String playerStatus) {
+    public static void checkFinishStatus(String playerStatus) {
         if (playerStatus.equals(StatusType.RESTART.getStatus())) {
-            NumberGenerator numberGenerator = new NumberGenerator();
-            numberGenerator.initProgramNumber();
+            NumberGenerator.initProgramNumber();
             result = StatusType.INITIAL_RESULT.getStatus();
             finishStatus = false;
         } else if (playerStatus.equals(StatusType.FINISH.getStatus())) {

@@ -9,10 +9,6 @@ import java.util.Set;
 
 /** 플레이어의 입력이 정상적인지 비정상적인지 확인하는 클래스 */
 public class InputUtils {
-    private static boolean lengthFlag = true;
-    private static boolean boundaryFlag = true;
-    private static boolean numberFlag = true;
-
     private InputUtils() {
     }
 
@@ -49,12 +45,12 @@ public class InputUtils {
      * @return true or false
      */
     public static boolean checkLength(String playerNumber) {
-        if (playerNumber.length() < SizeType.NUMBER_SIZE.getSize() ||
-                playerNumber.length() > SizeType.NUMBER_SIZE.getSize()) {
-            lengthFlag = false;
+        if ((playerNumber.length() < SizeType.NUMBER_SIZE.getSize()) ||
+                (playerNumber.length() > SizeType.NUMBER_SIZE.getSize())) {
+            return false;
         }
 
-        return lengthFlag;
+        return true;
     }
 
     /**
@@ -68,13 +64,13 @@ public class InputUtils {
 
         for (int i = BoundaryType.MINIMUM_INDEX.getBoundary();
              i <= BoundaryType.MAXIMUM_INDEX.getBoundary(); i++) {
-            if (playerArray[i] < BoundaryType.MINIMUM_ASCII.getBoundary() ||
-                    playerArray[i] > BoundaryType.MAXIMUM_ASCII.getBoundary()) {
-                boundaryFlag = false;
+            if ((playerArray[i] < BoundaryType.MINIMUM_ASCII.getBoundary()) ||
+                    (playerArray[i] > BoundaryType.MAXIMUM_ASCII.getBoundary())) {
+                return false;
             }
         }
 
-        return boundaryFlag;
+        return true;
     }
 
     /**
@@ -93,9 +89,9 @@ public class InputUtils {
         }
 
         if (playerSet.size() < SizeType.NUMBER_SIZE.getSize()) {
-            numberFlag = false;
+            return false;
         }
 
-        return numberFlag;
+        return true;
     }
 }

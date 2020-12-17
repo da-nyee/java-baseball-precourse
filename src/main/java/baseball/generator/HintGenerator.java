@@ -15,8 +15,7 @@ public class HintGenerator {
 
     /** 프로그램에서 정한 임의의 수를 가져오는 함수 */
     public static void getProgramNumber() {
-        NumberGenerator numberGenerator = new NumberGenerator();
-        programNumber = numberGenerator.generateProgramNumber();
+        programNumber = NumberGenerator.generateProgramNumber();
     }
 
     /**
@@ -82,14 +81,14 @@ public class HintGenerator {
      * @return result
      */
     public static String checkResult() {
-        if (ball != ValueType.INITIAL_VALUE.getValue() &&
-                strike == ValueType.INITIAL_VALUE.getValue()) {
+        if ((ball != ValueType.INITIAL_VALUE.getValue()) &&
+                (strike == ValueType.INITIAL_VALUE.getValue())) {
             result = ball + HintType.BALL.getHint();
-        } else if (ball == ValueType.INITIAL_VALUE.getValue() &&
-                strike != ValueType.INITIAL_VALUE.getValue()) {
+        } else if ((ball == ValueType.INITIAL_VALUE.getValue()) &&
+                (strike != ValueType.INITIAL_VALUE.getValue())) {
             result = strike + HintType.STRIKE.getHint();
-        } else if (ball == ValueType.INITIAL_VALUE.getValue() &&
-                strike == ValueType.INITIAL_VALUE.getValue()) {
+        } else if ((ball == ValueType.INITIAL_VALUE.getValue()) &&
+                (strike == ValueType.INITIAL_VALUE.getValue())) {
             result = HintType.NOTHING.getHint();
         } else {
             result = ball + HintType.BALL.getHint() + " " + strike + HintType.STRIKE.getHint();
