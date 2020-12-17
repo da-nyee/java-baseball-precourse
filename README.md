@@ -1,6 +1,8 @@
 # 미션 - 숫자 야구 게임
 우아한테크코스 웹 백엔드 프리코스 1주차 미션 프로젝트입니다.
 
+<br>
+
 ## 👩‍💻 구현할 기능 목록
 ### 프로그램
 - [x] 1에서 9까지 서로 다른 임의의 수 3개를 정한다.
@@ -39,6 +41,43 @@
 ### 추가사항
 - [x] 코드 리팩토링을 진행한다.
 - [x] 주석을 Javadoc 형태로 변경한다.
+
+<br>
+
+## 📂 완성된 디렉토리 구조
+```
+└─java-baseball-precourse
+    │
+    ├─src
+    │   └─main
+    │       └─java
+    │           ├─baseball
+    │           │   ├─controller
+    │           │   │   └─BaseBallController.java
+    │           │   ├─domain
+    │           │   │   ├─Hint.java
+    │           │   │   └─Number.java
+    │           │   ├─service
+    │           │   │   ├─HintService.java
+    │           │   │   ├─PlayerService.java
+    │           │   │   └─ProgramService.java
+    │           │   ├─type
+    │           │   │   ├─BoundaryType.java
+    │           │   │   ├─ExceptionType.java
+    │           │   │   ├─HintType.java
+    │           │   │   ├─InitializationType.java
+    │           │   │   ├─SizeType.java
+    │           │   │   ├─StatusType.java
+    │           │   │   ├─TextType.java
+    │           │   │   └─ValueType.java
+    │           │   ├─view
+    │           │   │   ├─InputView.java
+    │           │   │   └─OutputView.java
+    │           │   └─Application.java
+    │           └─utils
+    │               └─RandomUtils.java
+    └─README.md
+```
 
 <br>
 
